@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS `mujahithweb_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `mujahithweb_db`;
+
+CREATE TABLE IF NOT EXISTS `portfolio_state` (
+  `id` INT PRIMARY KEY DEFAULT 1,
+  `state_json` LONGTEXT NOT NULL,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS `admin_users` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `username` VARCHAR(64) UNIQUE NOT NULL,
+  `password_hash` VARCHAR(255) NOT NULL
+);
